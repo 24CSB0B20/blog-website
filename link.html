@@ -1,0 +1,475 @@
+<html>
+
+<head>
+	<title>
+		Blog
+	</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+		rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+	<style>
+
+		body{
+			overflow-x: hidden;
+		}
+		header {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			padding: 1rem 1rem;
+		}
+
+		.great-vibes-regular {
+			font-family: "Great Vibes", serif;
+			font-weight: 400;
+			font-style: normal;
+            font-size: 2.5rem;
+            margin-top: 1rem;
+		}
+
+
+		#nav {
+			display: flex;
+		}
+
+		.navItems {
+			margin: 0px 10px;
+			display: table-cell;
+			position: relative;
+            vertical-align: middle;
+			display: flex;
+			align-items: center;
+		}
+
+		.lato-thin {
+			font-family: "Lato", serif;
+			font-weight: 100;
+			font-style: normal;
+		}
+
+		.lato-light {
+			font-family: "Lato", serif;
+			font-weight: 300;
+			font-style: normal;
+		}
+
+		.lato-regular {
+			font-family: "Lato", serif;
+			font-weight: 400;
+			font-style: normal;
+		}
+
+		.lato-bold {
+			font-family: "Lato", serif;
+			font-weight: 700;
+			font-style: normal;
+		}
+
+		.lato-black {
+			font-family: "Lato", serif;
+			font-weight: 900;
+			font-style: normal;
+		}
+
+		.lato-thin-italic {
+			font-family: "Lato", serif;
+			font-weight: 100;
+			font-style: italic;
+		}
+
+		.lato-light-italic {
+			font-family: "Lato", serif;
+			font-weight: 300;
+			font-style: italic;
+		}
+
+		.lato-regular-italic {
+			font-family: "Lato", serif;
+			font-weight: 400;
+			font-style: italic;
+		}
+
+		.lato-bold-italic {
+			font-family: "Lato", serif;
+			font-weight: 700;
+			font-style: italic;
+		}
+
+		.lato-black-italic {
+			font-family: "Lato", serif;
+			font-weight: 900;
+			font-style: italic;
+		}
+
+		body {
+			background-image: url("bg2.gif");
+			color: #FFFFFF;
+		}
+
+		.wrapper {
+			margin: 5rem;
+			background-color: #0A0A0A;
+			opacity: 90%;
+		}
+
+		.navAnim {
+			color: #fff;
+			text-decoration: none;
+			display: inline-block;
+			padding: 0.25rem 0;
+			position: relative;
+		}
+
+		.navAnim:after {
+			background: none repeat scroll 0 0 transparent;
+			bottom: 0;
+			content: "";
+			display: block;
+			height: 2px;
+			left: 50%;
+			position: absolute;
+			background: #fff;
+			transition: width 0.3s ease 0s, left 0.3s ease 0s;
+			width: 0;
+		}
+
+		.navAnim:hover:after {
+			width: 100%;
+			left: 0;
+		}
+
+		#cta {
+			text-align: center;
+			align-items: center;
+			padding: 4rem 0;
+			height: 60vh;
+		}
+
+		#cta-text {
+			font-size: 4rem;
+			position: relative;
+			top: 25%;
+		}
+
+		#cta-button {
+			padding: 0.75rem 1.5rem;
+			border-radius: 28px;
+			position: relative;
+			top: 35%;
+			border: none;
+			font-size: 1.1rem;
+			margin: 1rem 0;
+			border: none;
+			transition: all 0.2s;
+			overflow: hidden;
+			font-family: "Lato", serif;
+			font-weight: 700;
+			font-style: normal;
+		}
+
+		#cta-button:hover {
+			filter: brightness(80%);
+			cursor: pointer;
+		}
+
+		#cta-button:active {
+			transform: scale(0.92)
+		}
+
+		#subscribe {
+			margin: 0rem 1rem;
+		}
+
+		.css-only-ripple::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 150%;
+			aspect-ratio: 1 / 1;
+			transform: translate(-50%, -50%) scale(0);
+			pointer-events: none;
+			border-radius: 999px;
+			background: rgba(255, 255, 255, .5);
+		}
+
+		.css-only-ripple:focus::after {
+			animation: scale_up 1000ms forwards;
+		}
+
+		@keyframes scale_up {
+			0% {
+				transform: translate(-50%, -50%) scale(0);
+				opacity: 1;
+			}
+
+			100% {
+				transform: translate(-50%, -50%) scale(1);
+				opacity: 0;
+			}
+		}
+
+		#blog {
+			padding: 0rem 1rem;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+
+		#categories {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		#subscribe {
+			display: flex;
+			justify-content: center;
+		}
+
+
+		.postPre {
+			display: flex;
+			flex-wrap: wrap;
+			width: 19.75%;
+			background-color: #1F1F1F;
+			font-size: 1.25rem;
+			margin: 1rem 0.75rem;
+			text-decoration: none;
+			color: white;
+			overflow: hidden;
+			height: 17.5rem;
+			border-radius: 8px;
+			transition: background-color 0.25s;
+			transition: transform 0.25s ease-in-out;
+			opacity: 100%;
+
+		}
+
+		.postImage {
+			width: 100%;
+			height: 120px;
+			object-fit: cover;
+			border-radius: 8px;
+			transition: transform 0.25s ease-in-out;
+		}
+
+		.postPre:hover {
+			background-color: #3D3D3D;
+			transform: scale(1.075);
+			box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.4);
+			
+		}
+
+		.postPre:hover .postImage {
+			transform: scale(1.075);
+
+		}
+
+		.postTitle {
+			margin-top: 0.5rem;
+			font-weight: bold;
+			font-size: 1.25rem;
+			padding: 0rem 1rem;
+		}
+
+		.content {
+			font-size: 0.75rem;
+			margin-top: 0.1rem;
+			padding: 0rem 1rem;
+		}
+
+		.category {
+			display: flex;
+			flex-direction: row;
+			width: 7.5%;
+			background-color: #1F1F1F;
+			margin: 1rem 0.75rem;
+			padding: 2rem;
+			overflow: hidden;
+			text-decoration: none;
+			color: white;
+			border-radius: 50%;
+			justify-content: center;
+			align-items: center;
+			aspect-ratio: 1 / 1;
+			transition: all 0.25s;
+			opacity: 100%;
+			aspect-ratio: 1 / 1;
+
+		}
+
+		.category:hover {
+			background-color: #3060AC;
+			transform: scale(1.1);
+			box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.4);
+		}
+
+		.catText {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		#blogTit {
+			padding: 0rem 1rem;
+			margin: 0rem 1rem;
+			margin-top: 2rem;
+			font-size: 2rem;
+		}
+
+		.icons {
+			margin: 0 1rem;
+		}
+
+		#footer {
+			background-color: white;
+			height: 4rem;
+			opacity: 60%;
+		}
+
+		#containerIcon {
+			position: relative;
+			top: 30%;
+			left: 39%;
+		}
+
+		.button {
+			padding: 0.75rem 1.5rem;
+			border-radius: 28px;
+			border: none;
+			font-size: 1.1rem;
+			margin: 1rem 0;
+			border: none;
+			transition: all 0.2s;
+			overflow: hidden;
+			font-family: "Lato", serif;
+			font-weight: 700;
+			font-style: normal;
+		}
+
+
+		input {
+			background-color: #6F6F6F;
+			border: 0px;
+			border-radius: 20px;
+			padding-top: 0.3rem;
+			padding-bottom: 0.3rem;
+			padding-left: 0.75rem;
+			padding-right: 0.75rem;
+			margin-top: 0.5rem;
+		}
+
+		select {
+			background-color: #6F6F6F;
+			border-radius: 20px;
+			padding-top: 0.25rem;
+			padding-bottom: 0.25rem;
+			padding-left: 0.75rem;
+			padding-right: 0.75rem;
+		}
+
+		@keyframes bounce {
+
+			0%,
+			100% {
+				transform: translateY(0);
+			}
+
+			50% {
+				transform: translateY(-10px);
+			}
+		}
+
+		.bounce {
+			transition: transform 0.3s ease-out;
+		}
+
+		.bounce:hover {
+			animation: bounce 0.8s ease-in-out infinite;
+		}
+
+		.bounce:not(:hover) {
+			animation: none;
+			transition: transform 0.3s ease-out;
+		}
+
+		.center-head {
+			text-align: center;
+		}
+
+		.center {
+			display: flex;
+			text-align: center;
+			align-items: center;
+			vertical-align: middle;
+		}
+
+		.form-element {
+			display: flex;
+			width: 21rem;
+			justify-content: space-between;
+		}
+
+		.m-top {
+			margin-top: 1.5rem;
+		}
+
+        #logo{
+			width: 12.5rem
+		}
+
+		#logo img{
+			width: 100%;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header>
+            <div class="lato-bold">
+				<a href="./#" id="logo" class="navAnim"><img  src="logo.png"></a>
+			</div>
+			<div id="nav">
+				<div class="navItems lato-regular">
+					<a href="././" class="navAnim">Home</a>
+				</div>
+				<div class="navItems lato-regular">
+					<a href="././link.html" class="navAnim">Blog</a>
+				</div>
+				<div class="navItems lato-regular">
+					<a href="././link.html" class="navAnim">Categories</a>
+				</div>
+				<div class="navItems lato-regular">
+					<a href="././link.html" class="navAnim">About</a>
+				</div>
+				<div class="navItems lato-regular">
+					<a href="././link.html" class="navAnim">Contact</a>
+				</div>
+			</div>
+		</header>
+		<section id="cta">
+			<div id="cta-text">
+				Looks like you clicked a link!<div class="great-vibes-regular">This is a placeholder link as actual blog posts and categories are beyond the scope of the assignment</div>
+			</div>
+			<a href="./"><button id="cta-button" class="css-only-ripple">Go Back</button></a>
+		</section>
+		<section id="footer">
+			<div id="containerIcon">
+				<img class="icons bounce" src="icons8-linkedin-24.png">
+				<img class="icons bounce" src="icons8-facebook-24.png">
+				<img class="icons bounce" src="icons8-instagram-24.png">
+				<img class="icons bounce" src="icons8-reddit-24.png">
+			</div>
+		</section>
+	</div>
+
+</body>
+
+
+</html>

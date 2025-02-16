@@ -1,0 +1,677 @@
+<html>
+
+<head>
+	<title>
+		Blog
+	</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+		rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+	<style>
+		body {
+			overflow-x: hidden;
+		}
+
+		header {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			padding: 1rem 1rem;
+		}
+
+		.great-vibes-regular {
+			font-family: "Great Vibes", serif;
+			font-weight: 400;
+			font-size: 4.5rem;
+			font-style: normal;
+			margin-top: 0.5rem;
+		}
+
+
+		#nav {
+			display: flex;
+		}
+
+		.navItems {
+			margin: 0px 10px;
+			display: table-cell;
+			position: relative;
+			vertical-align: middle;
+			display: flex;
+			align-items: center;
+		}
+
+		.lato-thin {
+			font-family: "Lato", serif;
+			font-weight: 100;
+			font-style: normal;
+		}
+
+		.lato-light {
+			font-family: "Lato", serif;
+			font-weight: 300;
+			font-style: normal;
+		}
+
+		.lato-regular {
+			font-family: "Lato", serif;
+			font-weight: 400;
+			font-style: normal;
+		}
+
+		.lato-bold {
+			font-family: "Lato", serif;
+			font-weight: 700;
+			font-style: normal;
+		}
+
+		.lato-black {
+			font-family: "Lato", serif;
+			font-weight: 900;
+			font-style: normal;
+		}
+
+		.lato-thin-italic {
+			font-family: "Lato", serif;
+			font-weight: 100;
+			font-style: italic;
+		}
+
+		.lato-light-italic {
+			font-family: "Lato", serif;
+			font-weight: 300;
+			font-style: italic;
+		}
+
+		.lato-regular-italic {
+			font-family: "Lato", serif;
+			font-weight: 400;
+			font-style: italic;
+		}
+
+		.lato-bold-italic {
+			font-family: "Lato", serif;
+			font-weight: 700;
+			font-style: italic;
+		}
+
+		.lato-black-italic {
+			font-family: "Lato", serif;
+			font-weight: 900;
+			font-style: italic;
+		}
+
+		body {
+			background-image: url("bg2.gif");
+			color: #FFFFFF;
+		}
+
+		.wrapper {
+			margin: 5rem;
+			background-color: #0A0A0A;
+			opacity: 90%;
+		}
+
+		.navAnim {
+			color: #fff;
+			text-decoration: none;
+			display: inline-block;
+			padding: 0.25rem 0;
+			position: relative;
+		}
+
+		.navAnim:after {
+			background: none repeat scroll 0 0 transparent;
+			bottom: 0;
+			content: "";
+			display: block;
+			height: 2px;
+			left: 50%;
+			position: absolute;
+			background: #fff;
+			transition: width 0.3s ease 0s, left 0.3s ease 0s;
+			width: 0;
+		}
+
+		.navAnim:hover:after {
+			width: 100%;
+			left: 0;
+		}
+
+		#cta {
+			text-align: center;
+			align-items: center;
+			padding: 4rem 0;
+			height: 60vh;
+		}
+
+		#cta-text {
+			font-size: 4rem;
+			position: relative;
+			top: 25%;
+		}
+
+		#cta-button {
+			padding: 0.75rem 1.5rem;
+			border-radius: 28px;
+			position: relative;
+			top: 35%;
+			border: none;
+			font-size: 1.1rem;
+			margin: 1rem 0;
+			border: none;
+			transition: all 0.2s;
+			overflow: hidden;
+			font-family: "Lato", serif;
+			font-weight: 700;
+			font-style: normal;
+		}
+
+		#cta-button:hover {
+			filter: brightness(80%);
+			cursor: pointer;
+		}
+
+		#cta-button:active {
+			transform: scale(0.92)
+		}
+
+		#subscribe {
+			margin: 0rem 1rem;
+		}
+
+		.css-only-ripple::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 150%;
+			aspect-ratio: 1 / 1;
+			transform: translate(-50%, -50%) scale(0);
+			pointer-events: none;
+			border-radius: 999px;
+			background: rgba(255, 255, 255, .5);
+		}
+
+		.css-only-ripple:focus::after {
+			animation: scale_up 1000ms forwards;
+		}
+
+		@keyframes scale_up {
+			0% {
+				transform: translate(-50%, -50%) scale(0);
+				opacity: 1;
+			}
+
+			100% {
+				transform: translate(-50%, -50%) scale(1);
+				opacity: 0;
+			}
+		}
+
+		#blog {
+			padding: 0rem 1rem;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+
+		#categories {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		#subscribe {
+			display: flex;
+			justify-content: center;
+		}
+
+
+		.postPre {
+			display: flex;
+			flex-wrap: wrap;
+			width: 19.75%;
+			aspect-ratio: 1/0.8;
+			background-color: #1F1F1F;
+			font-size: 1.25rem;
+			margin: 1rem 0.75rem;
+			text-decoration: none;
+			color: white;
+			overflow: hidden;
+			height: 20rem;
+			border-radius: 8px;
+			transition: background-color 0.25s;
+			transition: transform 0.25s ease-in-out;
+			opacity: 100%;
+
+		}
+
+		.postImage {
+			width: 100%;
+			height: 120px;
+			object-fit: cover;
+			border-radius: 8px;
+			transition: transform 0.25s ease-in-out;
+		}
+
+		.postPre:hover {
+			background-color: #3D3D3D;
+			transform: scale(1.075);
+			box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.4);
+
+		}
+
+		.postPre:hover .postImage {
+			transform: scale(1.075);
+
+		}
+
+		.postTitle {
+			margin-top: 0.5rem;
+			font-weight: bold;
+			font-size: 1.25rem;
+			padding: 0rem 1rem;
+		}
+
+		.content {
+			font-size: 0.75rem;
+			margin-top: 0.4rem;
+			padding: 0rem 1rem;
+		}
+
+		.category {
+			display: flex;
+			flex-direction: row;
+			width: 7.5%;
+			background-color: #1F1F1F;
+			margin: 1rem 0.75rem;
+			padding: 2rem;
+			overflow: hidden;
+			text-decoration: none;
+			color: white;
+			border-radius: 50%;
+			justify-content: center;
+			align-items: center;
+			aspect-ratio: 1 / 1;
+			transition: all 0.25s;
+			opacity: 100%;
+			aspect-ratio: 1 / 1;
+
+		}
+
+		.category:hover {
+			background-color: #3060AC;
+			transform: scale(1.1);
+			box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.4);
+		}
+
+		.catText {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		#blogTit {
+			padding: 0rem 1rem;
+			margin: 0rem 1rem;
+			margin-top: 2rem;
+			font-size: 2rem;
+		}
+
+		.icons {
+			margin: 0 1rem;
+		}
+
+		#footer {
+			background-color: white;
+			height: 4rem;
+			opacity: 60%;
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.button {
+			padding: 0.75rem 1.5rem;
+			border-radius: 28px;
+			border: none;
+			font-size: 1.1rem;
+			margin: 1rem 0;
+			border: none;
+			transition: all 0.2s;
+			overflow: hidden;
+			font-family: "Lato", serif;
+			font-weight: 700;
+			font-style: normal;
+			cursor: pointer;
+			transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+		}
+
+		.button:hover {
+			box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); 
+    		transform: scale(1.1);
+		}
+
+		input {
+			background-color: #6F6F6F;
+			border: 0px;
+			border-radius: 20px;
+			padding-top: 0.3rem;
+			padding-bottom: 0.3rem;
+			padding-left: 0.75rem;
+			padding-right: 0.75rem;
+			margin-top: 0.5rem;
+		}
+
+		select {
+			background-color: #6F6F6F;
+			border-radius: 20px;
+			padding-top: 0.25rem;
+			padding-bottom: 0.25rem;
+			padding-left: 0.75rem;
+			padding-right: 0.75rem;
+		}
+
+		@keyframes bounce {
+
+			0%,
+			100% {
+				transform: translateY(0);
+			}
+
+			50% {
+				transform: translateY(-10px);
+			}
+		}
+
+		.bounce {
+			transition: transform 0.3s ease-out;
+		}
+
+		.bounce:hover {
+			animation: bounce 0.8s ease-in-out infinite;
+		}
+
+		.bounce:not(:hover) {
+			animation: none;
+			transition: transform 0.3s ease-out;
+		}
+
+		.center-head {
+			text-align: center;
+		}
+
+		.center {
+			display: flex;
+			text-align: center;
+			align-items: center;
+			vertical-align: middle;
+		}
+
+		.form-element {
+			display: flex;
+			width: 21rem;
+			justify-content: space-between;
+		}
+
+		.m-top {
+			margin-top: 1.5rem;
+		}
+
+		.m-top-less {
+			margin-top: 0.25rem;
+		}
+
+		#logo {
+			width: 12.5rem
+		}
+
+		#logo img {
+			width: 100%;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header>
+			<div class="lato-bold">
+				<a href="./#" id="logo" class="navAnim"><img src="logo.png"></a>
+			</div>
+			<div id="nav">
+				<div class="navItems lato-regular">
+					<a href="././" class="navAnim">Home</a>
+				</div>
+				<div class="navItems lato-regular">
+					<a href="././link.html" class="navAnim">Blog</a>
+				</div>
+				<div class="navItems lato-regular">
+					<a href="././link.html" class="navAnim">Categories</a>
+				</div>
+				<div class="navItems lato-regular">
+					<a href="././link.html" class="navAnim">About</a>
+				</div>
+				<div class="navItems lato-regular">
+					<a href="././link.html" class="navAnim">Contact</a>
+				</div>
+			</div>
+		</header>
+		<section id="cta">
+			<div id="cta-text">
+				Welcome to my <div class="great-vibes-regular">Blog!</div>
+			</div>
+			<a href="./link.html"><button id="cta-button" class="css-only-ripple button">Discover</button></a>
+		</section>
+		<div id="blogTit" class="lato-bold">Blog Posts</div>
+		<section id="blog">
+			<a href="./link.html" class="postPre lato-bold">
+				<img src="post1.png" alt="Post Image" class="postImage">
+				<div class="postTitle">Galactic Collisions</div>
+				<div class="content lato-regular">
+					When two galaxies collide, their immense gravitational interactions create spectacular cosmic
+					events. Star formation accelerates as gas clouds compress, leading to brilliant bursts of light.
+					Over millions of years, these mergers can reshape entire galaxies, sometimes forming elliptical
+					structures or fueling the growth of supermassive black holes at their centers. Observing galactic
+					collisions provides insights into the past and future evolution of the universe.
+				</div>
+			</a>
+			<a href="./link.html" class="postPre lato-bold">
+				<img src="post2.jpg" alt="Post Image" class="postImage">
+				<div class="postTitle">Black Hole Mysteries</div>
+				<div class="content lato-regular">
+					Black holes continue to fascinate astronomers with their immense gravitational pull, capable of
+					trapping even light. The event horizon marks the boundary beyond which nothing can escape, making
+					black holes incredibly difficult to observe directly. Recent discoveries, including the imaging of
+					the M87 black hole, provide valuable insights into their structure. Theories surrounding black holes
+					also explore their possible connections to wormholes and alternate dimensions, pushing the
+					boundaries of modern physics.
+				</div>
+			</a>
+			<a href="./link.html" class="postPre lato-bold">
+				<img src="post3.webp" alt="Post Image" class="postImage">
+				<div class="postTitle">Life on Exoplanets</div>
+				<div class="content lato-regular">
+					The discovery of thousands of exoplanets has sparked excitement in the search for extraterrestrial
+					life. Scientists analyze planetary atmospheres for biosignatures such as oxygen, methane, and water
+					vapor. Some exoplanets, located in the habitable zones of their stars, may have conditions suitable
+					for life. Advanced telescopes like the James Webb Space Telescope will further refine our
+					understanding of these distant worlds, bringing us closer to answering the age-old question: Are we
+					alone in the universe?
+				</div>
+			</a>
+			<a href="./link.html" class="postPre lato-bold">
+				<img src="post11.jpg" alt="Post Image" class="postImage">
+				<div class="postTitle">Nebulae Wonders</div>
+				<div class="content lato-regular">
+					Nebulae are vast interstellar clouds of gas and dust that serve as birthplaces for new stars. The
+					iconic Orion Nebula, for example, glows with brilliant colors as young stars illuminate surrounding
+					gas. Some nebulae form from supernova remnants, showcasing the cycle of stellar life and death.
+					Studying these formations helps scientists understand the processes that govern star formation and
+					galaxy evolution, unlocking the secrets of the cosmos.
+				</div>
+			</a>
+			<a href="./link.html" class="postPre lato-bold">
+				<img src="post5.jpg" alt="Post Image" class="postImage">
+				<div class="postTitle">Dark Matter Puzzle</div>
+				<div class="content lato-regular">
+					Dark matter, an invisible and mysterious substance, makes up most of the universe's mass. Although
+					it does not emit, absorb, or reflect light, its gravitational effects are observed in galaxy
+					rotation and cosmic structures. Scientists employ techniques such as gravitational lensing to detect
+					its presence, but its true nature remains unknown. Unlocking the dark matter puzzle is one of the
+					biggest challenges in modern astrophysics and could revolutionize our understanding of the universe.
+				</div>
+			</a>
+			<a href="./link.html" class="postPre lato-bold">
+				<img src="post6.png" alt="Post Image" class="postImage">
+				<div class="postTitle">The Big Bang</div>
+				<div class="content lato-regular">
+					The universe originated from the Big Bang, a colossal explosion nearly 13.8 billion years ago. This
+					event set space, time, and matter into motion, forming the cosmic structures we observe today. The
+					cosmic microwave background radiation serves as a remnant of this event, providing crucial evidence
+					for the theory. Scientists continue to explore what happened in the first moments after the Big
+					Bang, delving into the fundamental forces that shaped existence itself.
+				</div>
+			</a>
+			<a href="./link.html" class="postPre lato-bold">
+				<img src="post7.png" alt="Post Image" class="postImage">
+				<div class="postTitle">Interstellar Travel</div>
+				<div class="content lato-regular">
+					The concept of interstellar travel has long been a fascination in science fiction, but advancing
+					technologies are bringing it closer to reality. Potential propulsion systems, such as light sails,
+					nuclear fusion engines, and antimatter propulsion, are being researched to make journeys beyond our
+					solar system feasible. Although current spacecraft would take thousands of years to reach the
+					nearest star, breakthroughs in physics may one day enable humanity to explore new worlds beyond our
+					cosmic neighborhood.
+				</div>
+			</a>
+			<a href="./link.html" class="postPre lato-bold">
+				<img src="post8.png" alt="Post Image" class="postImage">
+				<div class="postTitle">Wormhole Theories</div>
+				<div class="content lato-regular">
+					Wormholes, hypothesized bridges through space-time, could theoretically allow instant travel between
+					distant points in the universe. While no evidence of natural wormholes exists, mathematical models
+					based on Einstein’s general relativity suggest their possibility. Scientists debate whether they
+					could be stable or traversable, with some proposing exotic matter as a potential stabilizer. If
+					proven feasible, wormholes could revolutionize space exploration and even time travel theories.
+				</div>
+			</a>
+			<a href="./link.html" class="postPre lato-bold">
+				<img src="post9.png" alt="Post Image" class="postImage">
+				<div class="postTitle">Gravitational Waves</div>
+				<div class="content lato-regular">
+					The groundbreaking detection of gravitational waves in 2015 confirmed a key prediction of Einstein’s
+					theory of relativity. These ripples in space-time occur when massive objects like black holes or
+					neutron stars collide, sending energy waves across the cosmos. Observatories like LIGO and Virgo
+					continue detecting these signals, providing insights into some of the most violent and energetic
+					events in the universe. Studying gravitational waves opens a new frontier in astrophysics, allowing
+					us to explore the unseen forces shaping space and time.
+				</div>
+			</a>
+			<a href="./link.html" class="postPre lato-bold">
+				<img src="post12.avif" alt="Post Image" class="postImage">
+				<div class="postTitle">Cosmic Radiation</div>
+				<div class="content lato-regular">
+					Cosmic radiation, high-energy particles from space, constantly bombards Earth. These particles
+					originate from various sources, including the sun, distant supernovae, and quasars. While Earth’s
+					atmosphere shields us from harmful effects, astronauts and future space travelers must contend with
+					increased exposure. Understanding cosmic radiation is crucial for protecting space explorers and
+					designing advanced shielding technology for deep-space missions, ensuring the safety of human space
+					travel beyond our planet.
+				</div>
+			</a>
+		</section>
+		<div id="blogTit" class="lato-bold">Categories</div>
+		<section id="categories">
+			<a href="./link.html" class="category" style="text-decoration: none; color: inherit;">
+				<div class="catText lato-bold">Galaxies</div>
+			</a>
+			<a href="./link.html" class="category" style="text-decoration: none; color: inherit;">
+				<div class="catText lato-bold">Black Holes</div>
+			</a>
+			<a href="./link.html" class="category" style="text-decoration: none; color: inherit;">
+				<div class="catText lato-bold">Exoplanets</div>
+			</a>
+			<a href="./link.html" class="category" style="text-decoration: none; color: inherit;">
+				<div class="catText lato-bold">Nebulae</div>
+			</a>
+			<a href="./link.html" class="category" style="text-decoration: none; color: inherit;">
+				<div class="catText lato-bold">Clusters</div>
+			</a>
+			<a href="./link.html" class="category" style="text-decoration: none; color: inherit;">
+				<div class="catText lato-bold">Cosmic</div>
+			</a>
+			<a href="./link.html" class="category" style="text-decoration: none; color: inherit;">
+				<div class="catText lato-bold">Dark Matter</div>
+			</a>
+			<a href="./link.html" class="category" style="text-decoration: none; color: inherit;">
+				<div class="catText lato-bold">Astrobiology</div>
+			</a>
+			<a href="./link.html" class="category" style="text-decoration: none; color: inherit;">
+				<div class="catText lato-bold">Exploration</div>
+			</a>
+			<a href="./link.html" class="category" style="text-decoration: none; color: inherit;">
+				<div class="catText lato-bold">The Big Bang</div>
+			</a>
+			<a href="./link.html" class="category" style="text-decoration: none; color: inherit;">
+				<div class="catText lato-bold">Solar System</div>
+			</a>
+			<a href="./link.html" class="category" style="text-decoration: none; color: inherit;">
+				<div class="catText lato-bold">Interstellar</div>
+			</a>
+			<a href="./link.html" class="category" style="text-decoration: none; color: inherit;">
+				<div class="catText lato-bold">Missions</div>
+			</a>
+			<a href="./link.html" class="category" style="text-decoration: none; color: inherit;">
+				<div class="catText lato-bold">Wormholes</div>
+			</a>
+			<a href="./link.html" class="category" style="text-decoration: none; color: inherit;">
+				<div class="catText lato-bold">Gravitation</div>
+			</a>
+		</section>
+
+		<div id="blogTit" class="lato-bold center-head">Subscribe</div>
+		<section id="subscribe">
+			<form>
+				<div class="form-element m-top">
+					<div class="center">Email:</div>
+					<input id="email" type="text" name="email" placeholder="Enter your Email">
+				</div>
+				<div class="form-element m-top-less">
+					<div class="center">First Name:</div>
+					<input id="email" name="first" placeholder="First Name">
+				</div>
+				<div class="form-element m-top-less">
+					<div class="center">Last Name: </div>
+					<input id="email" name="last" placeholder="Last Name" clear>
+				</div>
+				<div class="form-element buttons m-top-less">
+					<button class="css-only-ripple button" type="reset">
+						Reset
+					</button>
+
+					<button class="css-only-ripple button" type="submit">
+						Submit
+					</button>
+				</div>
+			</form>
+		</section>
+		<section id="footer">
+			<div id="containerIcon">
+				<a href="./link.html"><img class="icons bounce" src="icons8-linkedin-24.png"></a>
+				<a href="./link.html"><img class="icons bounce" src="icons8-facebook-24.png"></a>
+				<a href="./link.html"><img class="icons bounce" src="icons8-instagram-24.png"></a>
+				<a href="./link.html"><img class="icons bounce" src="icons8-reddit-24.png"></a>
+			</div>
+		</section>
+	</div>
+
+</body>
+
+
+</html>
